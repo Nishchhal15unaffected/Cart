@@ -1,30 +1,38 @@
 import React from 'react'
-
+// import Cart from './Cart'
 class CartItem extends React.Component{
-	constructor(){
-		super();
-		this.state={
-			price:99,
-			name:'Phone',
-			qnt:2,
-			img:''
-		}
+	
+	 increaseQuant=()=>{
+	 	this.setState({
+	 		qnt:this.state.product.qnt+1
+	 	})
+	}
+	 decreaseQuant=()=>{
+
+	 	if(this.state.qnt>0){
+	 	this.setState({
+	 		qnt:this.state.product.qnt-1
+	 	})
+	 }
 	}
 	render(){
+		const {price,name,qnt}=this.props.product;
 		return(
 			<div className="cart-item">
 				<div className="left-block">
 				</div>
 				<div className="right-block">
-				<div style={{fontSize:25}}>{this.state.name}</div>
-				<div style={{color: '#777'}}>{this.state.price}</div>
-				<div style={{color:'#777'}}>{this.state.qnt}</div>
+				<div style={{fontSize:25}}>{name}</div>
+				<div style={{color:'#777'}}>{price}</div>
+				<div style={{color:'#777'}}>{qnt}</div>
 				</div>
 				<div className="cart-item-action">
-				<button id="btn">
+				<button id="btn" 
+				onClick={this.increaseQuant}>
 				Increase
 				</button>
-				<button id="btn">
+				<button id="btn" 
+				onClick={this.decreaseQuant}>
 				Dicrease
 				</button>
 				<button>
