@@ -2,19 +2,7 @@ import React from 'react'
 // import Cart from './Cart'
 class CartItem extends React.Component{
 	
-	 increaseQuant=()=>{
-	 	this.setState({
-	 		qnt:this.state.product.qnt+1
-	 	})
-	}
-	 decreaseQuant=()=>{
-
-	 	if(this.state.qnt>0){
-	 	this.setState({
-	 		qnt:this.state.product.qnt-1
-	 	})
-	 }
-	}
+	 
 	render(){
 		const {price,name,qnt}=this.props.product;
 		return(
@@ -28,14 +16,14 @@ class CartItem extends React.Component{
 				</div>
 				<div className="cart-item-action">
 				<button id="btn" 
-				onClick={this.increaseQuant}>
+				onClick={()=>this.props.onIncreaseQuant(this.props.product)}>
 				Increase
 				</button>
 				<button id="btn" 
-				onClick={this.decreaseQuant}>
+				onClick={()=>this.props.ondecreaseQuant(this.props.product)}>
 				Dicrease
 				</button>
-				<button>
+				<button >
 				Delete
 				</button>
 				</div>
