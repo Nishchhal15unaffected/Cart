@@ -23,7 +23,7 @@ class CartItem extends React.Component{
 				onClick={()=>this.props.ondecreaseQuant(this.props.product)}>
 				Dicrease
 				</button>
-				<button >
+				<button onClick={()=> this.props.ondeleteProduct(this.props.product.id)}>
 				Delete
 				</button>
 				</div>
