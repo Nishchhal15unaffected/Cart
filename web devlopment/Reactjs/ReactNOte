@@ -1,0 +1,17 @@
+						--------
+						setState
+						---------
+
+-->setState follows batch or shallow copy and asyncromus for render but when we us it in promises than it is syncronous
+
+->setState(prevState) calc in quen and than rerender 
+
+--------
+Props
+--------
+--> props is a like a func arg it send data from one componet to another componet 
+
+--------------
+Life cycle
+--------------
+componentDidMoundt() call only once render a component

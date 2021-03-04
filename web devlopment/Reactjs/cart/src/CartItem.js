@@ -1,34 +1,33 @@
 import React from 'react'
 // import Cart from './Cart'
-class CartItem extends React.Component{
+const CartItem =(props)=>{
 	
-	 
-	render(){
-		const {price,name,qnt}=this.props.product;
+		const {Price,name,qnt,img}=props.product;
 		return(
-			<div className="cart-item">
-				<div className="left-block">
+			<div>
+				<div >
+				<img src={img} alt="product img" />
 				</div>
-				<div className="right-block">
-				<div style={{fontSize:25}}>{name}</div>
-				<div style={{color:'#777'}}>{price}</div>
-				<div style={{color:'#777'}}>{qnt}</div>
+				<div>
+				<div>{name}</div>
+				<div>{Price}</div>
+				<div>{qnt}</div>
 				</div>
 				<div className="cart-item-action">
 				<button id="btn" 
-				onClick={()=>this.props.onIncreaseQuant(this.props.product)}>
+				onClick={()=>props.onIncreaseQuant(props.product)}>
 				Increase
 				</button>
 				<button id="btn" 
-				onClick={()=>this.props.ondecreaseQuant(this.props.product)}>
+				onClick={()=>props.ondecreaseQuant(props.product)}>
 				Dicrease
 				</button>
-				<button onClick={()=> this.props.ondeleteProduct(this.props.product.id)}>
+				<button onClick={()=> props.ondeleteProduct(props.product.id)}>
 				Delete
 				</button>
 				</div>
 			</div>
 			)
-	}
+		
 }
 export default CartItem;
